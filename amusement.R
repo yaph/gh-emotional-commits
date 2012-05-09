@@ -1,13 +1,10 @@
-# Execute script from R console
-# source('issues.R')
-
 # comment.char = "" must be set due to # char in C# 
-tcir = read.table("merged_counts_issues.csv", sep=",", header=TRUE, comment.char = "")
+tcir = read.table("merged_counts_amusement.csv", sep=",", header=TRUE, comment.char = "")
 # order by issue_count descending then by language name
 sorted_by_ratio <- tcir[with(tcir, order(-percentage, language)), ]
 
 # open a device using png() and specify taget image file
-png(filename="commit-messages-issues-percentage.png",
+png(filename="commit-messages-amusement-percentage.png",
     width = 800, height = 600, units = "px", pointsize = 14
 )
 
@@ -15,11 +12,11 @@ png(filename="commit-messages-issues-percentage.png",
 par(las=2, mar=c(6, 6, 2, 2))
 bp <- barplot(sorted_by_ratio$percentage,
     ylab="Percentage",
-    ylim=c(0,20),
+    ylim=c(0,.08),
     names.arg=sorted_by_ratio$language,
     col=heat.colors(nrow(tcir))
 )
-text(bp, 0, round(sorted_by_ratio$percentage, 1), cex=.8, pos=3)
+text(bp, 0, round(sorted_by_ratio$percentage, 2), cex=.8, pos=3)
 
 # close device
 dev.off()
