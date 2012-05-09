@@ -12,7 +12,7 @@ png(filename="commit-messages-swearing-percentage.png",
 par(las=2, mar=c(6, 6, 2, 2))
 bp <- barplot(sorted_by_ratio$percentage,
     ylab="Percentage",
-#    ylim=c(0,.18),
+    ylim=c(0,.3),
     names.arg=sorted_by_ratio$language,
     col=heat.colors(nrow(tcir))
 )
