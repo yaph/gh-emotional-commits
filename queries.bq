@@ -70,14 +70,13 @@ ORDER BY cntlang DESC
 ##### IE Issues #####
 SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
 WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
-AND REGEXP_MATCH(payload_commit_msg, r'\bIE')
+AND REGEXP_MATCH(payload_commit_msg, r'\bIE\s*\d*\b')
 OR REGEXP_MATCH(payload_commit_msg, r'(?i)\bInternet\s*Explorer\b');
-
 
 SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
 WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND (REGEXP_MATCH(payload_commit_msg, r'\bIE\s*\d*\b') OR REGEXP_MATCH(payload_commit_msg, r'(?i)\bInternet\s*Explorer\b'))
 AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(bug|fix|issue)|corrected')
-AND (REGEXP_MATCH(payload_commit_msg, r'\bIE') OR REGEXP_MATCH(payload_commit_msg, r'(?i)\bInternet\s*Explorer\b'))
 ##### IE Issues END #####
 
 
