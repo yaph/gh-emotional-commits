@@ -1,0 +1,95 @@
+# 2012-05-09 00:00:00 time restriction to make sure the same recordset is used for all queries
+
+##### Anger #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(a+rgh|angry|annoyed|annoying|appalled|bitter|cranky|hate|hating|mad)\b')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(a+rgh|angry|annoyed|annoying|appalled|bitter|cranky|hate|hating|mad)\b')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Anger END #####
+
+
+##### Joy #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(yes|yay|hallelujah|hurray|bingo|amused|cheerful|excited|glad|proud)\b')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(yes|yay|hallelujah|hurray|bingo|amused|cheerful|excited|glad|proud)\b')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Joy END #####
+
+
+##### Surprise #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(yikes|gosh|baffled|stumped|surprised|shocked)\b')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(yikes|gosh|baffled|stumped|surprised|shocked)\b')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Surprise END #####
+
+
+##### Amusement #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(ha(ha)+|he(he)+|lol|rofl|lmfao|lulz|lolz|rotfl|lawl|hilarious)\b')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(ha(ha)+|he(he)+|lol|rofl|lmfao|lulz|lolz|rotfl|lawl|hilarious)\b')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Amusement END #####
+
+
+##### Issues #####
+# precede bug, issue and fix with word boundary so words like debug, tissue and suffix are not included
+
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(bug|fix|issue)|corrected')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(bug|fix|issue)|corrected')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Issues END #####
+
+
+##### IE Issues #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'\bIE')
+OR REGEXP_MATCH(payload_commit_msg, r'(?i)\bInternet\s*Explorer\b');
+
+
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(bug|fix|issue)|corrected')
+AND (REGEXP_MATCH(payload_commit_msg, r'\bIE') OR REGEXP_MATCH(payload_commit_msg, r'(?i)\bInternet\s*Explorer\b'))
+##### IE Issues END #####
+
+
+##### Swearing #####
+SELECT payload_commit_msg, repository_language FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(wtf|wth|omfg|hell|ass|bitch|bullshit|bloody|fucking?|shit+y?|crap+y?)\b|\b(fuck|damn|piss|screw|suck)e?d?\b')
+
+SELECT repository_language, COUNT(*) as cntlang FROM [githubarchive:github.timeline] 
+WHERE repository_language != '' AND payload_commit_msg != '' AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2012-05-09 00:00:00')
+AND REGEXP_MATCH(payload_commit_msg, r'(?i)\b(wtf|wth|omfg|hell|ass|bitch|bullshit|bloody|fucking?|shit+y?|crap+y?)\b|\b(fuck|damn|piss|screw|suck)e?d?\b')
+GROUP BY repository_language
+ORDER BY cntlang DESC
+##### Swearing END #####
+
