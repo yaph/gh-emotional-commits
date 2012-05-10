@@ -1,8 +1,8 @@
 # comment.char = "" must be set due to # char in C# 
-tcir = read.table("considered_languages.csv", sep=",", header=TRUE, comment.char = "")
+tcir = read.table("included_languages.csv", sep=",", header=TRUE, comment.char = "")
 sorted_by_ratio <- tcir[with(tcir, order(-cntlang, repository_language)), ]
 
-png(filename="considered-languages-commit-count.png",
+png(filename="included-languages-commit-counts.png",
     width = 800, height = 600, units = "px", pointsize = 14
 )
 
