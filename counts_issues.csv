@@ -1,0 +1,88 @@
+repository_language,cntlang
+JavaScript,69656
+Java,53915
+Python,48305
+PHP,46325
+Ruby,44767
+C++,34604
+C,33939
+C#,10511
+Shell,9591
+Objective-C,6763
+Perl,6288
+VimL,3235
+Scala,3020
+CoffeeScript,2345
+Emacs Lisp,2042
+Haskell,1948
+Lua,1763
+Erlang,1603
+Clojure,1467
+ActionScript,1230
+Go,1185
+Groovy,1094
+Puppet,1000
+R,974
+D,764
+Matlab,724
+Delphi,663
+OCaml,638
+Common Lisp,471
+Assembly,461
+HaXe,372
+ColdFusion,342
+Rust,301
+Racket,288
+Scheme,263
+Verilog,241
+FORTRAN,235
+Tcl,203
+Prolog,184
+VHDL,168
+Arduino,164
+Objective-J,163
+Visual Basic,157
+F#,126
+Standard ML,109
+Vala,102
+Smalltalk,100
+Scilab,99
+DCPU-16 ASM,93
+Eiffel,92
+PowerShell,74
+AutoHotkey,74
+ASP,68
+Dart,64
+SuperCollider,63
+Julia,60
+Elixir,60
+OpenEdge ABL,42
+Coq,41
+Nemerle,39
+Dylan,37
+Powershell,37
+Nimrod,30
+Factor,29
+XQuery,28
+Apex,28
+Ada,27
+Parrot,20
+Turing,20
+ooc,20
+Pure Data,17
+Io,13
+Kotlin,13
+Opa,11
+Fancy,11
+Rebol,10
+Arc,9
+Gosu,8
+Logtalk,7
+Modelica,3
+Max/MSP,3
+Ioke,3
+Self,3
+DCPU-16 Assembly,1
+Nu,1
+Bro,1
+Augeas,1
