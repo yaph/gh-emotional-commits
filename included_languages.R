@@ -17,6 +17,7 @@ bp <- barplot(sorted_by_ratio$cntlang,
     col=heat.colors(nrow(tcir)),
     log(sorted_by_ratio$cntlang)
 )
+title(sub="Source: geeksta.net / @yaph | Data: githubarchive.org", cex.sub = 0.8, col.sub = "gray40", line = 5, adj = 1)
 
 # close device
 dev.off()

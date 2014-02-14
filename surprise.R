@@ -17,6 +17,7 @@ bp <- barplot(sorted_by_ratio$percentage,
     col=heat.colors(nrow(tcir))
 )
 text(bp, 0, round(sorted_by_ratio$percentage, 3), cex=.8, pos=3)
+title(sub="Source: geeksta.net / @yaph | Data: githubarchive.org", cex.sub = 0.8, col.sub = "gray40", line = 5, adj = 1)
 
 # close device
 dev.off()
