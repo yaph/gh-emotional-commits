@@ -12,7 +12,8 @@ options(scipen=3)
 # vertical labels: las=2, margins: mar=c(bottom, left, top, right)
 par(las=2, mar=c(6, 6, 2, 2),mgp=c(4.5,1,0))
 bp <- barplot(sorted_by_ratio$cntlang,
-    ylab="Commit Message Count",
+    ylab="Total Number of Commit Messages",
+    main='Programming Languages by Commit Message Counts',
     names.arg=sorted_by_ratio$repository_language,
     col=heat.colors(nrow(tcir)),
     log(sorted_by_ratio$cntlang)

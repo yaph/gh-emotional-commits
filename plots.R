@@ -1,0 +1,7 @@
+source('included_languages.R')
+source('amusement.R')
+source('anger.R')
+source('issues.R')
+source('joy.R')
+source('surprise.R')
+source('swearing.R')

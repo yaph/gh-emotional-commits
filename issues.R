@@ -1,5 +1,4 @@
-# Execute script from R console
-# source('issues.R')
+source('globals.R')
 
 # comment.char = "" must be set due to # char in C# 
 tcir = read.table("merged_counts_issues.csv", sep=",", header=TRUE, comment.char = "")
@@ -11,16 +10,10 @@ png(filename="commit-messages-issues-percentage.png",
     width = 800, height = 600, units = "px", pointsize = 14
 )
 
-# vertical labels: las=2, margins: mar=c(bottom, left, top, right)
-par(las=2, mar=c(6, 6, 2, 2))
-bp <- barplot(sorted_by_ratio$percentage,
-    ylab="Percentage",
-    ylim=c(0,20),
-    names.arg=sorted_by_ratio$language,
-    col=heat.colors(nrow(tcir))
-)
-text(bp, 0, round(sorted_by_ratio$percentage, 1), cex=.8, pos=3)
-title(sub="Source: geeksta.net / @yaph | Data: githubarchive.org", cex.sub = 0.8, col.sub = "gray40", line = 5, adj = 1)
+bp(sorted_by_ratio$percentage,
+   'Percentage of Commit Messages with Expressions Indicating Issues',
+   sorted_by_ratio$language,
+   c(0, 20))
 
 # close device
 dev.off()
