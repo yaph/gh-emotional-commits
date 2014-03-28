@@ -11,7 +11,7 @@ png(filename="commit-messages-amusement-percentage.png",
 )
 
 bp(sorted_by_ratio$percentage,
-   'Percentage of Commit Messages with Expressions of Amusement',
+   'Commit Messages with Expressions of Amusement',
    sorted_by_ratio$language,
    c(0, .085))
 

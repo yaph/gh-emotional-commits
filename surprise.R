@@ -11,7 +11,7 @@ png(filename="commit-messages-surprise-percentage.png",
 )
 
 bp(sorted_by_ratio$percentage,
-   'Percentage of Commit Messages with Expressions of Surprise',
+   'Commit Messages with Expressions of Surprise',
    sorted_by_ratio$language,
    c(0, 0.016))
 

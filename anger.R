@@ -11,7 +11,7 @@ png(filename="commit-messages-anger-percentage.png",
 )
 
 bp(sorted_by_ratio$percentage,
-   'Percentage of Commit Messages with Expressions of Anger',
+   'Commit Messages with Expressions of Anger',
    sorted_by_ratio$language,
    c(0, .20))
 

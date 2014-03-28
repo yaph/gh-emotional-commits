@@ -4,7 +4,7 @@ bp <- function(data, heading, names, ylim) {
   bar <- barplot(
     data,
     main=heading,
-    ylab='Portion of total commit messages in language',
+    ylab='Percentage of total commit messages in language',
     ylim=ylim,
     names.arg=names,
     col=heat.colors(nrow(tcir))

@@ -11,7 +11,7 @@ png(filename="commit-messages-swearing-percentage.png",
 )
 
 bp(sorted_by_ratio$percentage,
-   'Percentage of Commit Messages Containg Swear Words',
+   'Commit Messages Containg Swear Words',
    sorted_by_ratio$language,
    c(0, 0.32))
 
