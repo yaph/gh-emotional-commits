@@ -1,6 +1,6 @@
 source('globals.R')
 
-# comment.char = "" must be set due to # char in C# 
+# comment.char = "" must be set due to # char in C#
 tcir = read.table("merged_counts_swearing.csv", sep=",", header=TRUE, comment.char = "")
 # order by issue_count descending then by language name
 sorted_by_ratio <- tcir[with(tcir, order(-percentage, language)), ]
@@ -11,7 +11,7 @@ png(filename="commit-messages-swearing-percentage.png",
 )
 
 bp(sorted_by_ratio$percentage,
-   'Commit Messages Containg Swear Words',
+   'Commit Messages Containing Swear Words',
    sorted_by_ratio$language,
    c(0, 0.32))
 
